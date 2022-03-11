@@ -60,10 +60,10 @@ function buildCharts(sample) {
     console.log(data);
     // 3. Create a variable that holds the samples array. 
     var samplesArray = data.samples;
-    console,log(samplesArray);
+    console.log(samplesArray);
     // 4. Create a variable that filters the samples for the object with the desired sample number.
     var sampleNumSelect = sampleArray.filter(data => data.id == sample);
-    console.log(sampleNumelect);
+    console.log(sampleNumSelect);
     //  5. Create a variable that holds the first sample in the array.
     var firstSample = sampleNumSelect[0];
     console.log(firstSample);
