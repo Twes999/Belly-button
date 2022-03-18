@@ -62,7 +62,7 @@ function buildCharts(sample) {
     var samplesArray = data.samples;
     console.log(samplesArray);
     // 4. Create a variable that filters the samples for the object with the desired sample number.
-    var sampleNumSelect = sampleArray.filter(data => data.id == sample);
+    var sampleNumSelect = samplesArray.filter(data => data.id == sample);
     console.log(sampleNumSelect);
     //  5. Create a variable that holds the first sample in the array.
     var firstSample = sampleNumSelect[0];
@@ -70,7 +70,7 @@ function buildCharts(sample) {
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otuIds = firstSample.otu_ids;
-    var otuLables = firstSample.otu_labels;
+    var otuLabels = firstSample.otu_labels;
     var sampleValues = firstSample.sample_values;
     console.log(otuIds);
     console.log(otuLabels);
@@ -114,7 +114,7 @@ function buildCharts(sample) {
       text: otuLabels,
       mode: 'markers',
       marker: {
-        size:sampleValues,
+        size: sampleValues,
         color: otuIds,
         colorscale: "Portland"
       }
@@ -128,8 +128,8 @@ function buildCharts(sample) {
       xaxis: {title: "OTU ID", automargin: true},
       yaxis: {automargin: true},
       hovermode: "closest"
-      };
-      console.log(bubbleLayout);
+    };
+    console.log(bubbleLayout);
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout, {responsive: true}); 
@@ -174,7 +174,7 @@ function buildCharts(sample) {
      
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", guageData, gaugeLayout);
+    Plotly.newPlot("gauge", gaugeData, gaugeLayout, {responsive: true});
 };
 
 
